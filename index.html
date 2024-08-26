@@ -19,16 +19,16 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            min-height: 90vh;
+            min-height: 100vh;
         }
 
         .content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
             max-width: 900px;
             width: 100%;
+            flex-wrap: wrap;
         }
 
         .text-content {
@@ -95,13 +95,16 @@
             border-radius: 10px;
         }
 
+        /* Responsive design */
         @media (max-width: 900px) {
-            .text-content {
-                padding: 10px;
+            .content {
+                flex-direction: column;
             }
 
+            .text-content,
             .mockup-image {
-                max-width: 300px;
+                padding: 10px;
+                max-width: 100%;
             }
         }
 
@@ -112,10 +115,6 @@
 
             .subheading {
                 font-size: 14px;
-            }
-
-            .mockup-image {
-                max-width: 200px;
             }
         }
     </style>
@@ -130,7 +129,10 @@
                 <p class="subheading">Experience the best features and seamless performance on your mobile device.</p>
                 <div class="download-buttons">
                     <a href="#" class="download-button">
-                        <img src="apple-icon.png" alt="Apple Store Icon"> Download
+                        <img src="apple-icon.png" alt="Apple Store Icon"> Download on the App Store
+                    </a>
+                    <a href="#" class="download-button">
+                        <img src="google-icon.png" alt="Google Play Icon"> Get it on Google Play
                     </a>
                 </div>
             </div>
