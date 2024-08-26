@@ -18,13 +18,27 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
             padding: 20px;
             min-height: 90vh;
         }
 
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .text-content {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
         .logo {
-            max-width: 200px;
+            max-width: 150px;
             margin-bottom: 20px;
         }
 
@@ -38,7 +52,6 @@
             font-size: 16px;
             color: #666;
             margin-bottom: 30px;
-            max-width: 300px;
         }
 
         .download-buttons {
@@ -70,6 +83,28 @@
             width: 20px;
         }
 
+        .mockup-image {
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .mockup-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .text-content {
+                padding: 10px;
+            }
+
+            .mockup-image {
+                max-width: 300px;
+            }
+        }
+
         @media (max-width: 600px) {
             .heading {
                 font-size: 24px;
@@ -78,19 +113,30 @@
             .subheading {
                 font-size: 14px;
             }
+
+            .mockup-image {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="logo.png" alt="App Logo" class="logo">
-        <h1 class="heading">Download Our App</h1>
-        <p class="subheading">Experience the best features and seamless performance on your mobile device.</p>
-        <div class="download-buttons">
-            <a href="#" class="download-button">
-                <img src="apple-icon.png" alt="Apple Store Icon"> Download
-            </a>
+        <div class="content">
+            <div class="text-content">
+                <img src="logo.png" alt="App Logo" class="logo">
+                <h1 class="heading">Download Our App</h1>
+                <p class="subheading">Experience the best features and seamless performance on your mobile device.</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-button">
+                        <img src="apple-icon.png" alt="Apple Store Icon"> Download
+                    </a>
+                </div>
+            </div>
+            <div class="mockup-image">
+                <img src="mockup.png" alt="App Mockup">
+            </div>
         </div>
     </div>
 </body>
