@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your App Name</title>
-    <link rel="stylesheet" href="styles.css"> <!-- You can link your external CSS file here -->
+    <title>Mobile App Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            min-height: 90vh;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .heading {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subheading {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 300px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+        .download-button img {
+            vertical-align: middle;
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .heading {
+                font-size: 24px;
+            }
+
+            .subheading {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <div class="container">
-            <h1>Your App Name</h1>
-            <p>A brief tagline or description of your app.</p>
-            <a href="#download" class="cta-button">Download Now</a>
+    <div class="container">
+        <img src="logo.png" alt="App Logo" class="logo">
+        <h1 class="heading">Download Our App</h1>
+        <p class="subheading">Experience the best features and seamless performance on your mobile device.</p>
+        <div class="download-buttons">
+            <a href="#" class="download-button">
+                <img src="apple-icon.png" alt="Apple Store Icon"> Download
+            </a>
         </div>
-    </section>
-
-    <section id="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="feature">
-                <h3>Feature 1</h3>
-                <p>Description of feature 1.</p>
-            </div>
-            <div class="feature">
-                <h3>Feature 2</h3>
-                <p>Description of feature 2.</p>
-            </div>
-            <div class="feature">
-                <h3>Feature 3</h3>
-                <p>Description of feature 3.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="download">
-        <div class="container">
-            <h2>Download the App</h2>
-            <p>Get the app today and experience the benefits.</p>
-            <a href="#" class="cta-button">Download Now</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, feel free to contact us.</p>
-            <a href="mailto:info@example.com">info@example.com</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your App Name. All rights reserved.</p>
-    </footer>
+    </div>
 </body>
+
 </html>
