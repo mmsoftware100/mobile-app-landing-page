@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkadmin_panel=self.webpackChunkadmin_panel||[]).push([[117],{8117:function(n,e,t){t.r(e),t.d(e,{default:function(){return f}});var u=t(6907),r=t(6916),i=t(9434),s=t(2791),c=t(1397),a=t(184);function l(){var n=(0,i.I0)(),e=(0,r.t)();return n((0,c.kS)()),(0,s.useEffect)((function(){e.push("/login")}),[]),(0,a.jsx)(a.Fragment,{})}function f(){return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(u.ql,{children:(0,a.jsx)("title",{children:" Logout | QR Menu "})}),(0,a.jsx)(l,{})]})}}}]);
+//# sourceMappingURL=117.05d19a77.chunk.js.map
