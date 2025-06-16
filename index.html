@@ -68,15 +68,12 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            /* background-color: #007bff; */
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
             margin-bottom: 10px;
         }
-        
 
-        
         .download-button img {
             vertical-align: middle;
             margin-right: 8px;
@@ -93,6 +90,82 @@
         .mockup-image img {
             width: 100%;
             border-radius: 10px;
+        }
+
+        /* Agent List Styles */
+        .agents-section {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .agents-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .agent-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .agent-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .agent-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .agent-card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .agent-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .agent-card .contact-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .agent-card .contact-link {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .agent-card .contact-link:hover {
+            background-color: #0056b3;
         }
 
         /* Responsive design */
@@ -116,6 +189,10 @@
             .subheading {
                 font-size: 14px;
             }
+
+            .agent-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -127,37 +204,75 @@
                 <img src="app_icon.jpg" alt="App Logo" class="logo">
                 <h1 class="heading">Ball Wins Sport App</h1>
                 <div class="download-buttons">
-                    <a href="https://www.mediafire.com/file/5hxbosmx8hhf9yp/ball-wins-mar-4.apk/file" target="_blank" class="download-button">
-                        <img src="https://download.logo.wine/logo/Android_(operating_system)/Android_(operating_system)-Logo.wine.png" alt="Icon">
-                    </a>
-                    <a href="./ios" class="download-button">
-                        <img src="https://download.logo.wine/logo/App_Store_(iOS)/App_Store_(iOS)-Badge-Alternative-Logo.wine.png" alt="iOS Download">
+                    <a href="https://www.mediafire.com/file/5hxbosmx8hhf9yp/ball-wins-mar-4.apk/file" target="_blank"
+                        class="download-button">
+                        <img src="download.png" alt="Download Icon">
                     </a>
                 </div>
 
-                <p class="subheading">ဘောလုံးပွဲ ဝါသနာရှင်များ  မင်္ဂလာပါ ခင်ဗျ။
-                    𝐁𝐚𝐥𝐥 𝐖𝐢𝐧𝐬 𝐒𝐩𝐨𝐫𝐭 𝐀𝐩𝐩 လေးကတော့ 
-                    𝐢𝐛𝐞𝐭𝟕𝟖𝟗 & 𝟓𝟓𝟓𝐦𝐢𝐱 တို့က တိုက်ရိုက်ကစားနိုင်တဲ့ အပြင် နိုင်ငံတကာဘောလုံးပွဲကောင်းများစွာကိုလည်း 𝐋𝐢𝐯𝐞 ကြည့်နိုင်မဲ့ 𝐀𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 လေး ဖြစ်ပါတယ်။
-                    ဘောလုံးကစားသူများကို အကျိုးပြုစေမဲ့ 
-                    ပေါက်ကြေး / ဂိုးရလဒ်များ 𝐔𝐩𝐝𝐚𝐭𝐞 ကြည့်လို့ရမဲ့အပြင် နာမည်ကြီး 𝐓𝐢𝐩𝐬𝐭𝐞𝐫 များရဲ့ ပွဲများကိုလည်း
-                    𝐕𝐢𝐩 𝐓𝐢𝐩 မှာ 𝐅𝐫𝐞𝐞 ဝင်ကြည့်လို့ ရမှာမို့ 
-                    ညီကိုတွေရဲ့ ဖုန်းထဲမှာ ရှိထားသင့်တဲ့ 𝐀𝐩𝐩𝐥𝐚𝐜𝐭𝐢𝐨𝐧
+                <p class="subheading">ဘောလုံးပွဲ ဝါသနာရှင်များ မင်္ဂလာပါ ခင်ဗျ။
+                    <br> **Ball Wins Sport App** လေးကတော့
+                    **ibet789** & **555mix** တို့က တိုက်ရိုက်ကစားနိုင်တဲ့ အပြင် နိုင်ငံတကာဘောလုံးပွဲကောင်းများစွာကိုလည်း **Live** ကြည့်နိုင်မဲ့ **Application** လေး ဖြစ်ပါတယ်။
+                    <br> ဘောလုံးကစားသူများကို အကျိုးပြုစေမဲ့
+                    ပေါက်ကြေး / ဂိုးရလဒ်များ **Update** ကြည့်လို့ရမဲ့အပြင် နာမည်ကြီး **Tipster** များရဲ့ ပွဲများကိုလည်း
+                    **Vip Tip** မှာ **Free** ဝင်ကြည့်လို့ ရမှာမို့
+                    ညီကိုတွေရဲ့ ဖုန်းထဲမှာ ရှိထားသင့်တဲ့ **Application**
                     တခု ပဲ ဖြစ်ပါတယ်။
-                    𝐔𝐩𝐝𝐚𝐭𝐞 𝐍𝐞𝐰 ဆိုတဲ့ 𝐀𝐫𝐭𝐢𝐜𝐥𝐞 ကို ဝင်ရောက်ပီး 
-                    ဘောလုံးသတင်း 𝐔𝐩𝐝𝐚𝐭𝐞 များ ဖတ်ရှုနိုင်မဲ့အပြင်
-                    𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ကဲ့သို့ 𝐋𝐢𝐤𝐞 & 𝐂𝐨𝐦𝐦𝐞𝐧𝐭 များလည်း 
-                    ပေးနိုင်ဦးမှာမို့ မိမိရဲ့ထင်မြင်ယူဆချက်များ မှတ်ချက်ပြုလို့ ရမှာပါ။ 
-                    ဘောလုံးလောင်းကစားဝါသနာရှင်များ
-                    𝐢𝐛𝐞𝐭𝟕𝟖𝟗 & 𝟓𝟓𝟓𝐌𝐢𝐱 အကောင့်ဖွင့်ချင်ပါက 
-                    𝐀𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 ထဲက 𝐂𝐡𝐚𝐭 𝐁𝐨𝐱 ကနေ တိုက်ရိုက် 
-                    အကောင့်ဖွင့်ကစားနိုင်မှာပါ။</p>
-                
+                    <br> **Update New** ဆိုတဲ့ **Article** ကို ဝင်ရောက်ပီး
+                    ဘောလုံးသတင်း **Update** များ ဖတ်ရှုနိုင်မဲ့အပြင်
+                    **Facebook** ကဲ့သို့ **Like & Comment** များလည်း
+                    ပေးနိုင်ဦးမှာမို့ မိမိရဲ့ထင်မြင်ယူဆချက်များ မှတ်ချက်ပြုလို့ ရမှာပါ။
+                    <br> ဘောလုံးလောင်းကစားဝါသနာရှင်များ
+                    **ibet789** & **555Mix** အကောင့်ဖွင့်ချင်ပါက
+                    **Application** ထဲက **Chat Box** ကနေ တိုက်ရိုက်
+                    အကောင့်ဖွင့်ကစားနိုင်မှာပါ။
+                </p>
+
             </div>
             <div class="mockup-image">
                 <img src="mock.png" alt="App Mockup">
             </div>
         </div>
+
+        <div class="agents-section">
+            <h2>Our Agents</h2>
+            <div class="agent-list" id="agentList">
+                </div>
+        </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // fetch('https://social.software100.com.mm/api/v1/agents?project_id=4')
+            fetch('http://localhost:8000/api/v1/agents?project_id=2')
+                .then(response => response.json())
+                .then(data => {
+                    const agentListContainer = document.getElementById('agentList');
+                    data.forEach(agent => {
+                        const agentCard = document.createElement('div');
+                        agentCard.classList.add('agent-card');
+
+                        agentCard.innerHTML = `
+                            <img src="${agent.image_url}" alt="${agent.name}'s profile picture">
+                            <h3>${agent.name}</h3>
+                            <p><strong>Phone:</strong> ${agent.phone}</p>
+                            <p><strong>Address:</strong> ${agent.address}</p>
+                            <div class="contact-links">
+                                ${agent.viber ? `<a href="${agent.viber}" target="_blank" class="contact-link" style="background-color: #7360F2;">Viber</a>` : ''}
+                                ${agent.facebook ? `<a href="${agent.facebook}" target="_blank" class="contact-link" style="background-color: #1877F2;">Facebook</a>` : ''}
+                                ${agent.messenger ? `<a href="${agent.messenger}" target="_blank" class="contact-link" style="background-color: #0099FF;">Messenger</a>` : ''}
+                                ${agent.telegram ? `<a href="${agent.telegram}" target="_blank" class="contact-link" style="background-color: #2CA5E0;">Telegram</a>` : ''}
+                            </div>
+                        `;
+                        agentListContainer.appendChild(agentCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching agents:', error);
+                    document.getElementById('agentList').innerHTML = '<p>Failed to load agent information. Please try again later.</p>';
+                });
+        });
+    </script>
 </body>
 
 </html>
