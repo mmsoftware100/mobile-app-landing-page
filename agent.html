@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ball Wins</title>
+    <title>{{ name }}</title>
     <style>
         /* Basic Reset & Body Styling */
         body {
@@ -280,8 +280,8 @@
         <header class="header">
             <div class="header-left">
                 <!-- Placeholder for logo image -->
-                <img src="https://placehold.co/40x40/0f3460/ffffff?text=BW" alt="Ball Wins Logo">
-                <h1>Ball Wins</h1>
+                <img src="{{image_url}}" alt="Ball Wins Logo">
+                <h1>{{name}}</h1>
             </div>
             <div class="share-icon" onclick="shareApp()">
                 <!-- Placeholder for share icon -->
@@ -290,8 +290,8 @@
         </header>
 
         <section class="welcome-banner">
-            <span>Welcome to Ball Wins ! ✨</span>
-            <span>Exp - 4.10.25</span>
+            <span>{{announcement}}</span>
+            <span>Live Update</span>
         </section>
 
         <section class="betting-platforms">
@@ -378,7 +378,7 @@
                 transition: opacity 0.3s ease;
             `;
             messageBox.innerHTML = `
-                <p>Share functionality would be implemented here!</p>
+                <p>${shareData.text}</p>
                 <p>Title: ${shareData.title}</p>
                 <p>URL: ${shareData.url}</p>
                 <button onclick="this.parentNode.remove()" style="
