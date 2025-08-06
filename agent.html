@@ -495,52 +495,89 @@
         // get agent slug from URL
         const urlParts = window.location.pathname.split("/");
         const agentSlug = urlParts[urlParts.length - 1];
+
+        // Fetch data from the API
+        fetch(`https://social.software100.com.mm/api/v1/agents/${agentSlug}`)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("Failed to fetch agent data");
+            }
+            return res.json();
+          })
+          .then((data) => {
+            const agent = data;
+
+            // Inject agent data into the page
+            document.querySelector("h1").textContent = agent.name;
+            document.querySelector(".header-left img").src = agent.image_url;
+            document.querySelector(".senior-section img").src = agent.image_url;
+            document.querySelector(".senior-section h2").textContent =
+              agent.name;
+            document.querySelector(".senior-section p").textContent =
+              agent.address;
+            document.querySelector(
+              ".welcome-banner span:first-child"
+            ).textContent = agent.announcement;
+
+            // Update social links
+            document.querySelector('a[aria-label="Facebook"]').href =
+              agent.facebook;
+            document.querySelector('a[aria-label="Telegram"]').href =
+              agent.telegram;
+            document.querySelector('a[aria-label="WeChat"]').href =
+              agent.messenger;
+            document.querySelector('a[aria-label="Viber"]').href = agent.viber;
+          })
+          .catch((error) => {
+            console.error("Error loading agent data:", error);
+            // Optionally show a fallback or error message in UI
+          });
         // call to api GET https://social.software100.com.mm/api/v1/agents/{{agentSlug}}
         // response
-        let sampleResponse = {
-          id: 1,
-          project_id: 4,
-          name: "Agent One",
-          address: "address",
-          image_url:
-            "https://social.software100.com.mm/storage/01JXVT6Z1KGM78NGE2K3WSPNSR.jpg",
-          phone: "0912346578",
-          viber: "https://www.viber.com/mytel0804",
-          facebook: "https://facebook.com",
-          messenger: "https://messenger.com",
-          telegram: "https://t.me/MytelMyanmarOfficial",
-          created_at: "2025-06-16T07:28:12.000000Z",
-          updated_at: "2025-08-06T09:34:08.000000Z",
-          slug: "agentone",
-          announcement: "Welcome to Ball Wins! Enjoy the game!",
-        };
+        // let sampleResponse = {
+        //   id: 1,
+        //   project_id: 4,
+        //   name: "Agent One",
+        //   address: "address",
+        //   image_url:
+        //     "https://social.software100.com.mm/storage/01JXVT6Z1KGM78NGE2K3WSPNSR.jpg",
+        //   phone: "0912346578",
+        //   viber: "https://www.viber.com/mytel0804",
+        //   facebook: "https://facebook.com",
+        //   messenger: "https://messenger.com",
+        //   telegram: "https://t.me/MytelMyanmarOfficial",
+        //   created_at: "2025-06-16T07:28:12.000000Z",
+        //   updated_at: "2025-08-06T09:34:08.000000Z",
+        //   slug: "agentone",
+        //   announcement: "Welcome to Ball Wins! Enjoy the game!",
+        // };
 
         // inject data into the page
 
-        // Inject data into the page
-        document.querySelector("h1").textContent = sampleResponse.name;
-        document.querySelector(".header-left img").src =
-          sampleResponse.image_url;
-        document.querySelector(".senior-section img").src =
-          sampleResponse.image_url;
-        document.querySelector(".senior-section h2").textContent =
-          sampleResponse.name;
-        document.querySelector(".senior-section p").textContent =
-          sampleResponse.address;
+        // // Inject data into the page
+        // document.querySelector("h1").textContent = sampleResponse.name;
+        // document.querySelector(".header-left img").src =
+        //   sampleResponse.image_url;
+        // document.querySelector(".senior-section img").src =
+        //   sampleResponse.image_url;
+        // document.querySelector(".senior-section h2").textContent =
+        //   sampleResponse.name;
+        // document.querySelector(".senior-section p").textContent =
+        //   sampleResponse.address;
 
-        // Update social links
-        document.querySelector('a[aria-label="Facebook"]').href =
-          sampleResponse.facebook;
-        document.querySelector('a[aria-label="Telegram"]').href =
-          sampleResponse.telegram;
-        document.querySelector('a[aria-label="WeChat"]').href =
-          sampleResponse.messenger;
-        document.querySelector('a[aria-label="Viber"]').href =
-          sampleResponse.viber;
+        // // Update social links
+        // document.querySelector('a[aria-label="Facebook"]').href =
+        //   sampleResponse.facebook;
+        // document.querySelector('a[aria-label="Telegram"]').href =
+        //   sampleResponse.telegram;
+        // document.querySelector('a[aria-label="WeChat"]').href =
+        //   sampleResponse.messenger;
+        // document.querySelector('a[aria-label="Viber"]').href =
+        //   sampleResponse.viber;
 
-        // Inject announcement data (using a hardcoded string as no data is provided)
-        document.querySelector(".welcome-banner span:first-child").textContent =
-          sampleResponse.announcement;;
+        // // Inject announcement data (using a hardcoded string as no data is provided)
+        // document.querySelector(".welcome-banner span:first-child").textContent =
+        //   sampleResponse.announcement;
       });
     </script>
   </body>
