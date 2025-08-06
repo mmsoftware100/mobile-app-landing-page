@@ -289,6 +289,24 @@
     </style>
   </head>
   <body>
+    <div
+      id="loading-indicator"
+      style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.2rem;
+        background-color: #4d1c1c;
+        padding: 1rem 2rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      "
+    >
+      ⏳ Loading...
+    </div>
     <div class="container">
       <header class="header">
         <div class="header-left">
@@ -470,6 +488,9 @@
       // In a real project, you would link the Font Awesome CSS or use SVG icons.
       // This is a basic simulation to make the layout look similar without external libs.
       document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loading-indicator");
+        loader.style.display = "block"; // show loader
+
         const faIcons = document.querySelectorAll(".fa");
         faIcons.forEach((icon) => {
           let content = "";
@@ -505,6 +526,8 @@
             return res.json();
           })
           .then((data) => {
+            loader.style.display = "none"; // hide loader
+
             const agent = data;
 
             // Inject agent data into the page
@@ -530,6 +553,7 @@
           })
           .catch((error) => {
             console.error("Error loading agent data:", error);
+             loader.textContent = "❌ Failed to load agent data.";
             // Optionally show a fallback or error message in UI
           });
         // call to api GET https://social.software100.com.mm/api/v1/agents/{{agentSlug}}
