@@ -110,15 +110,23 @@
       .platform-grid {
         display: grid;
         grid-template-columns: repeat(
-          /* auto-fit, */
-          3,
+          /* auto-fit, */ 3,
           minmax(150px, 1fr)
         ); /* Responsive grid */
         gap: 20px;
         margin-bottom: 30px;
       }
 
+      .platform-grid a {
+        text-decoration: none; /* Remove underline */
+        color: white;
+      }
+
       .platform-card {
+        display: block; /* Make anchor behave like block element */
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit text color */
+
         background-color: #0f3460; /* Dark blue for cards */
         padding: 20px;
         border-radius: 10px;
@@ -332,30 +340,42 @@
 
       <section class="betting-platforms">
         <div class="platform-grid">
-          <div class="platform-card">
-            <img src="./images/555.svg" alt="555Mix Logo" />
-            <p>555Mix</p>
-          </div>
-          <div class="platform-card">
-            <img src="./images/ibet.png" alt="iBet Logo" />
-            <p>iBet</p>
-          </div>
-          <div class="platform-card">
-            <img src="./images/batman.jpg" alt="Batman 688 Logo" />
-            <p>Batman 688</p>
-          </div>
-          <div class="platform-card">
-            <img src="./images/socolive.webp" alt="Football Live Logo" />
-            <p>Football Live</p>
-          </div>
-          <div class="platform-card">
-            <img src="./images/aiscore.png" alt="AIScore Logo" />
-            <p>AIScore</p>
-          </div>
-          <div class="platform-card">
-            <img src="./images/sport-news.png" alt="Football News Logo" />
-            <p>Football News</p>
-          </div>
+          <a href="https://m.bet555mix.com/" target="_blank">
+            <div class="platform-card">
+              <img src="./images/555.svg" alt="555Mix Logo" />
+              <p>555Mix</p>
+            </div>
+          </a>
+          <a href="https://www.ibet789.com/" target="_blank">
+            <div class="platform-card">
+              <img src="./images/ibet.png" alt="iBet Logo" />
+              <p>iBet</p>
+            </div>
+          </a>
+          <a href="https://m.batman688.net/" target="_blank">
+            <div class="platform-card">
+              <img src="./images/batman.jpg" alt="Batman 688 Logo" />
+              <p>Batman 688</p>
+            </div>
+          </a>
+          <a href="https://kickmm.com/" target="_blank">
+            <div class="platform-card">
+              <img src="./images/socolive.webp" alt="Football Live Logo" />
+              <p>Football Live</p>
+            </div>
+          </a>
+          <a href="viptips.html" target="_blank">
+            <div class="platform-card">
+              <img src="./images/viptips.jpg" alt="VIP Tips Logo" />
+              <p>VIP Tips</p>
+            </div>
+          </a>
+          <a href="https://mysportmyanmar.com/category/all/football/" target="_blank">
+            <div class="platform-card">
+              <img src="./images/sport-news.png" alt="Football News Logo" />
+              <p>Football News</p>
+            </div>
+          </a>
         </div>
       </section>
 
