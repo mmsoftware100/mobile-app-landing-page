@@ -579,6 +579,40 @@
         }, 3000);
       }
 
+      // Fetch user-specific PWA config from API
+      async function initPWA() {
+        
+        const urlParts = window.location.pathname.split("/");
+        const agentSlug = urlParts[urlParts.length - 1];
+
+        const response = await fetch(
+          `https://social.software100.com.mm/api/v1/agents/${agentSlug}/pwa-config`
+        );
+        const pwaConfig = await response.json();
+
+        // Update manifest link
+        const manifestLink = document.createElement("link");
+        manifestLink.rel = "manifest";
+        manifestLink.href = `data:application/json,${encodeURIComponent(
+          JSON.stringify(pwaConfig)
+        )}`;
+        document.head.appendChild(manifestLink);
+
+        // Update theme color
+        document.querySelector('meta[name="theme-color"]').content =
+          pwaConfig.theme_color;
+
+        // Update iOS meta tags
+        document.querySelector(
+          'meta[name="apple-mobile-web-app-title"]'
+        ).content = pwaConfig.name;
+
+        const appleIcon = document.createElement("link");
+        appleIcon.rel = "apple-touch-icon";
+        appleIcon.href = pwaConfig.icons[0].src; // Use first icon for iOS
+        document.head.appendChild(appleIcon);
+      }
+
       // Simulate Font Awesome icons using unicode characters
       // In a real project, you would link the Font Awesome CSS or use SVG icons.
       // This is a basic simulation to make the layout look similar without external libs.
@@ -645,12 +679,19 @@
             document.querySelector('a[aria-label="WeChat"]').href =
               agent.messenger;
             document.querySelector('a[aria-label="Viber"]').href = agent.viber;
+
+            initPWA();
           })
           .catch((error) => {
             console.error("Error loading agent data:", error);
             loader.textContent = "❌ Failed to load agent data.";
             // Optionally show a fallback or error message in UI
           });
+
+        
+
+        // let call another api for PWA Icon and Name
+
         // call to api GET https://social.software100.com.mm/api/v1/agents/{{agentSlug}}
         // response
         // let sampleResponse = {
