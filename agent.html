@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Add these PWA meta tags -->
+    <meta name="theme-color" content="#1a1a2e" id="theme-color" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Ball Wins"
+      id="app-title"
+    />
+    <link rel="apple-touch-icon" href="/default-icon.png" id="apple-icon" />
+
     <title>Ball Wins Agent</title>
     <style>
       /* Basic Reset & Body Styling */
@@ -581,7 +592,6 @@
 
       // Fetch user-specific PWA config from API
       async function initPWA() {
-        
         const urlParts = window.location.pathname.split("/");
         const agentSlug = urlParts[urlParts.length - 1];
 
@@ -687,8 +697,6 @@
             loader.textContent = "❌ Failed to load agent data.";
             // Optionally show a fallback or error message in UI
           });
-
-        
 
         // let call another api for PWA Icon and Name
 
