@@ -520,9 +520,9 @@
         <h2 style="margin-top: 0">🎯 VIP Tips</h2>
         <p id="vip-tip-title">Here are your exclusive VIP tips for today!</p>
         <ul style="padding-left: 20px" id="vip-tips-description">
-          <li>Match 1 - Team A vs Team B → ✅ Team A</li>
+          <!-- <li>Match 1 - Team A vs Team B → ✅ Team A</li>
           <li>Match 2 - Team C vs Team D → ✅ Team D</li>
-          <li>Match 3 - Team E vs Team F → ✅ Team F</li>
+          <li>Match 3 - Team E vs Team F → ✅ Team F</li> -->
         </ul>
         <button
           onclick="closeVipModal()"
@@ -781,7 +781,7 @@
             ).textContent = `${agent.vip_tips.title}`;
 
             document.getElementById(
-              "vip-tip-description"
+              "vip-tips-description"
             ).textContent = `${agent.vip_tips.description}`;
 
             initPWA();
