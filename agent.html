@@ -220,6 +220,16 @@
         margin-top: 20px;
       }
 
+      .social-link svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .share-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
       /* Responsive Adjustments */
       @media (max-width: 768px) {
         .container {
@@ -274,7 +284,7 @@
 
       /* FontAwesome for Icons (simulated, as no external lib is used) */
       /* In a real scenario, you'd link Font Awesome CDN or use SVG icons */
-      .fa {
+      /* .fa {
         display: inline-block;
         font-style: normal;
         font-variant: normal;
@@ -284,19 +294,19 @@
 
       .fa-share-alt::before {
         content: "\f1e0";
-      } /* Unicode for share icon */
+      } 
       .fa-facebook::before {
         content: "\f09a";
-      } /* Unicode for Facebook */
+      } 
       .fa-telegram::before {
         content: "\f2c6";
-      } /* Unicode for Telegram */
+      } 
       .fa-wechat::before {
         content: "\f1d7";
-      } /* Unicode for WeChat */
+      }  
       .fa-viber::before {
         content: "\f409";
-      } /* Unicode for Viber */
+      }   */
       /* Note: These unicode characters are placeholders. For actual icons without FontAwesome,
            you would use SVG icons or emojis. */
     </style>
@@ -370,7 +380,10 @@
               <p>VIP Tips</p>
             </div>
           </a>
-          <a href="https://mysportmyanmar.com/category/all/football/" target="_blank">
+          <a
+            href="https://mysportmyanmar.com/category/all/football/"
+            target="_blank"
+          >
             <div class="platform-card">
               <img src="./images/sport-news.png" alt="Football News Logo" />
               <p>Football News</p>
@@ -383,7 +396,65 @@
         <img src="{{image_url}}" alt="Ball Wins Logo" />
         <h2>{{name}}</h2>
         <p>{{address}}</p>
+
         <div class="social-links">
+          <a href="{{facebook}}" class="social-link" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#ffffff"
+            >
+              <path
+                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+              />
+            </svg>
+          </a>
+          <a href="{{telegram}}" class="social-link" aria-label="Telegram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#ffffff"
+            >
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"
+              />
+            </svg>
+          </a>
+          <a href="{{messenger}}" class="social-link" aria-label="WeChat">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#ffffff"
+            >
+              <path
+                d="M11.176 1.761c-5.088 0-9.213 3.414-9.213 7.627 0 2.19 1.117 4.151 2.865 5.486-.144.525-.919 2.085-.986 2.38-.111.456.144.456.33.34.186-.113 2.004-1.357 2.76-1.864.456.057.919.113 1.396.113 5.088 0 9.213-3.414 9.213-7.628 0-4.213-4.125-7.627-9.213-7.627zm-4.35 5.486c-.577 0-1.043-.456-1.043-1.02 0-.565.466-1.02 1.043-1.02s1.043.455 1.043 1.02c0 .564-.466 1.02-1.043 1.02zm8.7 0c-.576 0-1.042-.456-1.042-1.02 0-.565.466-1.02 1.042-1.02.577 0 1.043.455 1.043 1.02 0 .564-.466 1.02-1.043 1.02z"
+              />
+              <path
+                d="M19.059 11.5c0 3.556-3.134 6.439-7 6.439-.456 0-.919-.057-1.382-.113-.33.34-2.118 1.471-2.865 1.983-.144.114-.33.114-.33-.34-.066-.296-.842-1.864-.986-2.38-1.748-1.335-2.865-3.296-2.865-5.486 0-3.556 3.134-6.439 7-6.439s7 2.883 7 6.439zm-3.5-1.809c0-.509-.466-.962-1.043-.962-.576 0-1.042.453-1.042.962 0 .509.466.962 1.042.962.577 0 1.043-.453 1.043-.962zm-5.088 0c0-.509-.466-.962-1.043-.962s-1.043.453-1.043.962c0 .509.466.962 1.043.962s1.043-.453 1.043-.962z"
+              />
+            </svg>
+          </a>
+          <a href="{{viber}}" class="social-link" aria-label="Viber">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#ffffff"
+            >
+              <path
+                d="M23.155 13.893c.716-6.027-.344-9.832-2.256-11.553l.001-.001c-3.086-2.939-13.508-3.374-17.2.132-1.658 1.715-2.242 4.232-2.306 7.348-.064 3.117-.14 8.956 5.301 10.54h.005l-.005 2.419s-.037.98.589 1.177c.716.232 1.04-.223 3.267-2.883 3.724.323 6.584-.417 6.909-.525.752-.252 5.007-.815 5.695-6.654zm-12.237 5.477s-2.357 2.939-3.09 3.702c-.24.248-.486.223-.648-.046-.117-.208-.236-.543-.236-.543-.773-1.774-1.165-4.078-1.212-6.914-.031-1.47.061-2.85.204-3.974.965-5.478 5.671-5.85 6.533-5.85 5.448.312 7.518 6.452 7.104 9.835-.423 3.468-3.178 4.09-3.178 4.09-.972.271-3.187.402-5.424.314-1.096-.045-1.774-.145-1.774-.145zm1.651-5.422c-.083.237-.825 2.655-1.155 3.725-.259.847-.512.8-.719.59-.264-.267-.495-.607-.495-.607s3.329-3.229 3.329-3.66c0-.43-.299-.47-.465-.43-.182.043-.1.671-.1.671l.671 2.238c.007.016.019.023.024.039.005.016-.003.024-.01.038-.161.333-.646 1.68-.646 1.68s-.183.408-.47.324l-.843-.249c-.062-.021-.095-.061-.095-.061l-.159-.311c-.14-.278-.216-.464-.216-.464l-2.184-7.377s-.159-.388.111-.534c.27-.146.614-.01.614-.01l9.399 6.954c.27.18.324.464.324.464l-.012.056s-.183.172-.397.248c-.331.118-.744.023-.952-.13-.07-.043-.095-.061-.095-.061l-2.297-1.798s-.237-.182-.344-.215c-.106-.033-.216.011-.216.011l-.734.396s-.01.055-.043.094c-.033.038-.075.053-.075.053l-.204.086c-.232.1-.55.139-.55.139z"
+              />
+            </svg>
+          </a>
+        </div>
+        <!-- <div class="social-links">
           <a href="{{facebook}}" class="social-link" aria-label="Facebook">
             <span class="fa fa-facebook"></span>
           </a>
@@ -396,7 +467,7 @@
           <a href="{{viber}}" class="social-link" aria-label="Viber">
             <span class="fa fa-viber"></span>
           </a>
-        </div>
+        </div> -->
       </section>
 
       <footer class="footer">All rights reserved © 2023 Ball Wins.</footer>
@@ -515,26 +586,26 @@
         const loader = document.getElementById("loading-indicator");
         loader.style.display = "block"; // show loader
 
-        const faIcons = document.querySelectorAll(".fa");
-        faIcons.forEach((icon) => {
-          let content = "";
-          if (icon.classList.contains("fa-share-alt"))
-            content = "🔗"; // Link/Share icon
-          else if (icon.classList.contains("fa-facebook"))
-            content = "📘"; // Facebook icon
-          else if (icon.classList.contains("fa-telegram"))
-            content = "✈️"; // Telegram icon
-          else if (icon.classList.contains("fa-wechat"))
-            content = "💬"; // WeChat icon
-          else if (icon.classList.contains("fa-viber")) content = "📞"; // Viber icon
+        // const faIcons = document.querySelectorAll(".fa");
+        // faIcons.forEach((icon) => {
+        //   let content = "";
+        //   if (icon.classList.contains("fa-share-alt"))
+        //     content = "🔗"; // Link/Share icon
+        //   else if (icon.classList.contains("fa-facebook"))
+        //     content = "📘"; // Facebook icon
+        //   else if (icon.classList.contains("fa-telegram"))
+        //     content = "✈️"; // Telegram icon
+        //   else if (icon.classList.contains("fa-wechat"))
+        //     content = "💬"; // WeChat icon
+        //   else if (icon.classList.contains("fa-viber")) content = "📞"; // Viber icon
 
-          if (content) {
-            const span = document.createElement("span");
-            span.textContent = content;
-            span.style.fontSize = "1em"; // Adjust size if needed
-            icon.replaceWith(span);
-          }
-        });
+        //   if (content) {
+        //     const span = document.createElement("span");
+        //     span.textContent = content;
+        //     span.style.fontSize = "1em"; // Adjust size if needed
+        //     icon.replaceWith(span);
+        //   }
+        // });
 
         // get last path of url maindomain.com/agent-slug
         // get agent slug from URL
