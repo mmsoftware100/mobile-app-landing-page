@@ -381,11 +381,16 @@
           </a>
           <a href="https://kickmm.com/" target="_blank">
             <div class="platform-card">
-              <img src="./images/pngtree-live-football-streaming-icon-button-png-image_8761481.png" alt="Football Live Logo" />
+              <img
+                src="./images/pngtree-live-football-streaming-icon-button-png-image_8761481.png"
+                alt="Football Live Logo"
+              />
               <p>Football Live</p>
             </div>
           </a>
-          <a href="viptips.html" target="_blank">
+
+          <!-- click on this link should open dialog with vip tips -->
+          <a href="#">
             <div class="platform-card">
               <img src="./images/viptips.jpg" alt="VIP Tips Logo" />
               <p>VIP Tips</p>
@@ -482,6 +487,58 @@
       </section>
 
       <footer class="footer">All rights reserved © 2023 Ball Wins.</footer>
+    </div>
+
+    <!-- VIP Tips Modal -->
+    <div
+      id="vipModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background-color: #16213e;
+          color: white;
+          padding: 25px;
+          border-radius: 10px;
+          max-width: 90%;
+          width: 400px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+          position: relative;
+        "
+      >
+        <h2 style="margin-top: 0">🎯 VIP Tips</h2>
+        <p>Here are your exclusive VIP tips for today!</p>
+        <ul style="padding-left: 20px">
+          <li>Match 1 - Team A vs Team B → ✅ Team A</li>
+          <li>Match 2 - Team C vs Team D → ✅ Team D</li>
+          <li>Match 3 - Team E vs Team F → ✅ Team F</li>
+        </ul>
+        <button
+          onclick="closeVipModal()"
+          style="
+            margin-top: 15px;
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Close
+        </button>
+      </div>
     </div>
 
     <script>
@@ -623,6 +680,24 @@
         document.head.appendChild(appleIcon);
       }
 
+      // Close modal function
+      function closeVipModal() {
+        document.getElementById("vipModal").style.display = "none";
+      }
+
+      // Optional: close modal on outside click or Esc key
+      window.addEventListener("click", function (e) {
+        const modal = document.getElementById("vipModal");
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.getElementById("vipModal").style.display = "none";
+        }
+      });
+
       // Simulate Font Awesome icons using unicode characters
       // In a real project, you would link the Font Awesome CSS or use SVG icons.
       // This is a basic simulation to make the layout look similar without external libs.
@@ -655,6 +730,17 @@
         // get agent slug from URL
         const urlParts = window.location.pathname.split("/");
         const agentSlug = urlParts[urlParts.length - 1];
+
+        // Handle VIP Tips modal open
+        document.querySelectorAll(".platform-card").forEach((card) => {
+          const label = card.querySelector("p")?.textContent?.trim();
+          if (label === "VIP Tips") {
+            card.parentElement.addEventListener("click", function (e) {
+              e.preventDefault(); // prevent page jump
+              document.getElementById("vipModal").style.display = "flex";
+            });
+          }
+        });
 
         // Fetch data from the API
         fetch(`https://social.software100.com.mm/api/v1/agents/${agentSlug}`)
